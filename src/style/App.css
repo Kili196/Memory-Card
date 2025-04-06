@@ -1,3 +1,20 @@
-.heading {
+.memory-game__container {
+  height: 50%;
+}
+
+/** CARD */
+
+.card {
   background-color: var(--card--color);
+  padding: 1rem;
+  color: white;
+  border: 2px solid var(--card--border--color);
+  border-radius: 10px;
+}
+
+.card--heading {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.2rem;
+  font-weight: 600;
 }

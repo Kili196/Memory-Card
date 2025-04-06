@@ -1,9 +1,12 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
 :root {
   font-weight: 400;
   line-height: 500;
   font-style: normal;
 
   --card--color: #2b286d;
+  --card--border--color: #48469a;
 
   --body--padding: 2rem;
 }
@@ -45,9 +48,10 @@ body {
   text-rendering: optimizeSpeed;
   line-height: 1.5;
   background-image: linear-gradient(130deg, #2f1158, #1f1b4b, #1f1b4b);
-  display: flex;
-  justify-content: center;
+  width: 40%;
+  margin: auto;
   padding: var(--body--padding);
+  font-family: "Roboto", sans-serif;
 }
 
 /* A elements that don't have a class get default styles */
