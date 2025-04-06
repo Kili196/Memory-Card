@@ -5,10 +5,10 @@
   line-height: 500;
   font-style: normal;
 
-  --card--color: #2b286d;
-  --card--border--color: #48469a;
+  --card-color: #2b286d;
+  --card-border-color: #48469a;
 
-  --body--padding: 2rem;
+  --body-padding: 2rem;
 }
 /* Box sizing rules */
 *,
@@ -50,7 +50,7 @@ body {
   background-image: linear-gradient(130deg, #2f1158, #1f1b4b, #1f1b4b);
   width: 40%;
   margin: auto;
-  padding: var(--body--padding);
+  padding: var(--body-padding);
   font-family: "Roboto", sans-serif;
 }
 
