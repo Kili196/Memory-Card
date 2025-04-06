@@ -4,6 +4,8 @@
   font-style: normal;
 
   --card--color: #2b286d;
+
+  --body--padding: 2rem;
 }
 /* Box sizing rules */
 *,
@@ -43,6 +45,9 @@ body {
   text-rendering: optimizeSpeed;
   line-height: 1.5;
   background-image: linear-gradient(130deg, #2f1158, #1f1b4b, #1f1b4b);
+  display: flex;
+  justify-content: center;
+  padding: var(--body--padding);
 }
 
 /* A elements that don't have a class get default styles */
