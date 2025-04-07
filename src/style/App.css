@@ -1,5 +1,5 @@
 .memory-game__container {
-  height: 50%;
+  width: 700px;
 }
 
 /** CARD */
@@ -12,9 +12,29 @@
   border-radius: 10px;
 }
 
+.memory-game__card--content {
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3rem;
+}
+
+.memory-game__card--content:hover {
+  background-color: var(--card-hover-color);
+  border: 2px solid var(--card-hover-border-color);
+}
+
 .memory-game__header {
   display: flex;
   justify-content: space-between;
   font-size: 1.2rem;
   font-weight: 600;
+  margin-bottom: 2rem;
+}
+
+.memory-game__card-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 1rem;
 }
