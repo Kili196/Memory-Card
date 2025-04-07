@@ -1,33 +1,29 @@
 import { useState } from "react";
 
-import Header from "./components/Header";
+import ScoreBoard from "./components/ScoreBoard";
 import Card from "./components/Card";
 
 function App() {
   const cardOptions = ["🧛‍♀️", "🧞", "👨‍🚀", "🐸", "🧌", "🧙‍♂️", "🦄", "🐉"];
 
+  function generateRandomIdx() {
+    const randomIdx = Math.floor(Math.random() * (cardOptions.length - 0)) + 0;
+    return randomIdx;
+  }
+
+  function generateCards(cardNumber) {
+    let renderedCards = [];
+    for (let i = 0; i < cardNumber; i++) {
+      const randomIdx = generateRandomIdx();
+      renderedCards.push(<Card value={cardOptions[randomIdx]} />);
+    }
+    return renderedCards;
+  }
+
   return (
     <div className="memory-game__container">
-      <Header />
-      <div className="memory-game__card-container">
-        {" "}
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-      </div>
+      <ScoreBoard />
+      <div className="memory-game__card-container">{generateCards(16)}</div>
     </div>
   );
 }
