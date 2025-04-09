@@ -1,9 +1,7 @@
-const Card = ({ value }) => {
+const Card = ({ icon, id }) => {
   return (
     <>
-      <div className="memory-game__card memory-game__card--content">
-        {value}
-      </div>
+      <div className="memory-game__card memory-game__card--content">{icon}</div>
     </>
   );
 };
