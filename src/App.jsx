@@ -5,6 +5,10 @@ import ScoreBoard from "./components/ScoreBoard";
 import CardGrid from "./components/CardGrid";
 
 function App() {
+  const [clickedCardIds, setClickedCardIds] = useState([]);
+  const [currentScore, setCurrentScore] = useState(0);
+  const [highScore, setHighScore] = useState(0);
+
   const cardOptions = [
     { id: 1, icon: "🧛‍♀️" },
     { id: 2, icon: "🧞" },
@@ -22,10 +26,6 @@ function App() {
     { id: 14, icon: "🦹‍♂️" },
     { id: 15, icon: "🧟‍♂️" },
   ];
-
-  const [clickedCardIds, setClickedCardIds] = useState([]);
-  const [currentScore, setCurrentScore] = useState(0);
-  const [highScore, setHighScore] = useState(0);
 
   function isIdClicked(id) {
     return clickedCardIds.find((element) => element === id);
