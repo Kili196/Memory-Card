@@ -1,7 +1,8 @@
 import { useState } from "react";
 
 import ScoreBoard from "./components/ScoreBoard";
-import Card from "./components/Card";
+
+import CardGrid from "./components/CardGrid";
 
 function App() {
   const cardOptions = [
@@ -26,11 +27,6 @@ function App() {
   const [currentScore, setCurrentScore] = useState(0);
   const [highScore, setHighScore] = useState(0);
 
-  function generateRandomIdx() {
-    const randomIdx = Math.floor(Math.random() * (cardOptions.length - 0)) + 0;
-    return randomIdx;
-  }
-
   function isIdClicked(id) {
     return clickedCardIds.find((element) => element === id);
   }
@@ -52,26 +48,10 @@ function App() {
     }
   }
 
-  function generateCards(cardNumber) {
-    let renderedCards = [];
-    for (let i = 0; i < cardNumber; i++) {
-      const randomIdx = generateRandomIdx();
-      renderedCards.push(
-        <Card
-          icon={cardOptions[randomIdx].icon}
-          id={cardOptions[randomIdx].id}
-          handleCardClick={handleCardClick}
-          key={i}
-        />
-      );
-    }
-    return renderedCards;
-  }
-
   return (
     <div className="memory-game__container">
       <ScoreBoard currentscore={currentScore} highscore={highScore} />
-      <div className="memory-game__card-container">{generateCards(20)}</div>
+      <CardGrid cardOptions={cardOptions} handleCardClick={handleCardClick} />
     </div>
   );
 }
