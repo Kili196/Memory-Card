@@ -13,11 +13,43 @@ function App() {
     { id: 6, icon: "🧙‍♂️" },
     { id: 7, icon: "🦄" },
     { id: 8, icon: "🐉" },
+    { id: 9, icon: "👻" },
+    { id: 10, icon: "🧝‍♂️" },
+    { id: 11, icon: "🦸‍♀️" },
+    { id: 12, icon: "🧚‍♀️" },
+    { id: 13, icon: "🕵️‍♂️" },
+    { id: 14, icon: "🦹‍♂️" },
+    { id: 15, icon: "🧟‍♂️" },
   ];
+
+  const [clickedCardIds, setClickedCardIds] = useState([]);
+  const [currentScore, setCurrentScore] = useState(0);
+  const [highScore, setHighScore] = useState(0);
 
   function generateRandomIdx() {
     const randomIdx = Math.floor(Math.random() * (cardOptions.length - 0)) + 0;
     return randomIdx;
+  }
+
+  function isIdClicked(id) {
+    return clickedCardIds.find((element) => element === id);
+  }
+
+  function checkHighScore() {
+    if (currentScore >= highScore) {
+      setHighScore(currentScore + 1);
+    }
+  }
+
+  function handleCardClick(id) {
+    if (!isIdClicked(id)) {
+      setClickedCardIds([...clickedCardIds, id]);
+      setCurrentScore((prev) => prev + 1);
+      checkHighScore();
+    } else {
+      setClickedCardIds([]);
+      setCurrentScore(0);
+    }
   }
 
   function generateCards(cardNumber) {
@@ -28,6 +60,8 @@ function App() {
         <Card
           icon={cardOptions[randomIdx].icon}
           id={cardOptions[randomIdx].id}
+          handleCardClick={handleCardClick}
+          key={i}
         />
       );
     }
@@ -36,8 +70,8 @@ function App() {
 
   return (
     <div className="memory-game__container">
-      <ScoreBoard />
-      <div className="memory-game__card-container">{generateCards(16)}</div>
+      <ScoreBoard currentscore={currentScore} highscore={highScore} />
+      <div className="memory-game__card-container">{generateCards(20)}</div>
     </div>
   );
 }

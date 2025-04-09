@@ -1,7 +1,12 @@
-const Card = ({ icon, id }) => {
+const Card = ({ icon, id, handleCardClick }) => {
   return (
     <>
-      <div className="memory-game__card memory-game__card--content">{icon}</div>
+      <div
+        onClick={() => handleCardClick(id)}
+        className="memory-game__card memory-game__card--content"
+      >
+        {icon}
+      </div>
     </>
   );
 };

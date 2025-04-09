@@ -1,8 +1,8 @@
-const ScoreBoard = () => {
+const ScoreBoard = ({ highscore, currentscore }) => {
   return (
     <header className="memory-game__card  memory-game__score-board ">
-      <label> Current Score: 3</label>
-      <label> Best Score: 5</label>
+      <label> Current Score: {currentscore}</label>
+      <label> Best Score: {highscore}</label>
     </header>
   );
 };
