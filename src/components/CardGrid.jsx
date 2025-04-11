@@ -22,7 +22,7 @@ const CardGrid = ({ cardOptions, handleCardClick }) => {
     return randomIdx;
   }
 
-  return <div className="memory-game__card-container">{generateCards(20)}</div>;
+  return <div className="memory-game__card-container">{generateCards(18)}</div>;
 };
 
 export default CardGrid;

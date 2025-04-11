@@ -20,12 +20,16 @@
   padding: 0;
 }
 
-body {
-  display: flex; /* Enable Flexbox */
-  justify-content: center; /* Center horizontally */
-  align-items: center; /* Center vertically */
-  min-height: 100vh; /* Ensure the body takes up the full viewport height */
-  margin: 0; /* Remove any default margins */
-  flex-direction: column;
-  background-image: linear-gradient(130deg, #2f1158, #1f1b4b, #1f1b4b);
+html,
+body,
+#root {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center; /* center the container horizontally */
+  align-items: center; /* optional: center vertically */
+  background: radial-gradient(#1c0c7e, #290292); /* optional background */
+  font-family: "Roboto", sans-serif;
 }

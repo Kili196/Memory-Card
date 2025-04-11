@@ -1,5 +1,7 @@
 .memory-game__container {
-  width: 700px;
+  margin: 10px;
+  width: 800px;
+  min-width: 100px;
 }
 
 /** CARD */
@@ -13,7 +15,6 @@
 }
 
 .memory-game__card--content {
-  height: 150px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -35,6 +36,16 @@
 
 .memory-game__card-container {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
   gap: 1rem;
+}
+
+@media (max-width: 500px) {
+  .memory-game__card--content {
+    font-size: 2rem;
+  }
+
+  .memory-game__score-board {
+    font-size: 1rem;
+  }
 }
